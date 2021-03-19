@@ -1,11 +1,14 @@
 {
   "name": "quiz-game-harvey-jiang-and-andrew-shi",
   "version": "1.0.0",
-  "main": "index.html",
-  "dependencies": {},
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.2",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta2",
     "parcel": "^2.0.0-beta.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2"
   },
   "scripts": {
     "start": "parcel serve ./src/index.html",
@@ -21,6 +24,5 @@
   "bugs": {
     "url": "https://github.com/staten-island-tech/quiz-game-harvey-jiang-and-andrew-shi/issues"
   },
-  "homepage": "https://github.com/staten-island-tech/quiz-game-harvey-jiang-and-andrew-shi#readme",
-  "description": ""
+  "homepage": "https://github.com/staten-island-tech/quiz-game-harvey-jiang-and-andrew-shi#readme"
 }

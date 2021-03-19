@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.HASH_REF_4e4b48d14b05138322efb086ec8548c3.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container-fluid">
+  <div class="row row-cols-2">
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+  </div>
+</div>
+
+    <script src="/index.HASH_REF_062e9a7565ca912a5f7d6b832142d36c.js"></script>
+</body>
+</html>
