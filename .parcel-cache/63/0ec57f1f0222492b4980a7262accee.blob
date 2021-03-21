@@ -1,0 +1,2 @@
+require("./js/array");
+let score;

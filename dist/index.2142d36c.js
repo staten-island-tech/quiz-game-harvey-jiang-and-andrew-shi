@@ -442,6 +442,33 @@ id) /*: string*/
 }
 
 },{}],"3L8AI":[function(require,module,exports) {
+require("./objects");
+
+},{"./objects":"4eaG9"}],"4eaG9":[function(require,module,exports) {
+console.log("uwu hi cuttie");
+
+const quizQuestions = [
+  {
+    question: "who is this girl",
+    answersChoices: {
+      a: "Chizuru Ichinose",
+      b: "Ruka Sarashina",
+      c: "Sumi Sakurasawa",
+      d: "Mami Nanami",
+    },
+    correctAnswer: "c",
+  },
+  {
+    question: "Which one of these is a JavaScript package manager?",
+    answersChoices: {
+      a: "Chizuru Ichinose",
+      b: "Ruka Sarashina",
+      c: "Sumi Sakurasawa",
+      d: "Mami Nanami",
+    },
+    correctAnswer: "c",
+  },
+];
 
 },{}]},["21c8X","3L8AI"], "3L8AI", "parcelRequire3684")
 

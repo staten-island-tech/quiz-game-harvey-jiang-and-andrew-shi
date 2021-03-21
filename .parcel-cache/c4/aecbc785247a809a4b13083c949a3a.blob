@@ -1,0 +1,22 @@
+console.log("uwu hi cuttie");
+
+const myQuestions = [
+  {
+    question: "who is this girl",
+    answersChoices: {
+      a: "Chizuru Ichinose",
+      b: "Sheryl Sandberg",
+      c: "Brendan Eich",
+    },
+    correctAnswer: "c",
+  },
+  {
+    question: "Which one of these is a JavaScript package manager?",
+    answersChoices: {
+      a: "Node.js",
+      b: "TypeScript",
+      c: "npm",
+    },
+    correctAnswer: "c",
+  },
+];
