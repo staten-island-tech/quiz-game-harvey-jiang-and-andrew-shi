@@ -1,0 +1,6 @@
+require("./objects");
+(function () {
+  const init = function () {
+    const displayItems = quizQuestions;
+  };
+})();

@@ -442,34 +442,131 @@ id) /*: string*/
 }
 
 },{}],"3L8AI":[function(require,module,exports) {
-require("./objects");
+var _objects = require("./objects");
+(function () {
+  // IIFE POGGERS
+  const init = function () {
+    // this funtion displays all of the items based on how many are in the quizQuestion
+    const displayItems = _objects.quizQuestions[1].forEach(item => _objects.DOMselectors.displayContainer.insertAdjacentHTML("afterbegin", ` <div id="question" class="" >${item.question}</div>
+
+      <figure class="figure w-25 h-25">
+      <img src="${item.img}" class="figure-img img-fluid" alt="sumi">
+    </figure>
+
+      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.a}</button>
+          </div>
+          
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.b}</button>
+          </div>
+
+          <div class="col">
+            <button type="button" class="btn btn-light  btn-outline-secondary">${item.answersChoices.c}</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.d}</button>
+          </div>
+      </div>
+
+      <div class="h-25 w-25">
+        <button id="start-quiz-btn">Start</button>
+        <button id="next-ques-btn">Next</button>
+      </div>
+
+    </div> `));
+  };
+  init();
+  const nextQuesBtn = document.querySelector("#next-ques-btn");
+  // this function runs everythime  you click the next button
+  nextQuesBtn.addEventListener("click", nextQuestion);
+  // DOMselectors.displayContainer.insertAdjacentHTML("afterbegin");
+  // maybe i can splice and make that into a new array and for loop that 5head
+  function nextQuestion() {
+    const lengthOfArray = _objects.quizQuestions.length;
+  }
+})();
 
 },{"./objects":"4eaG9"}],"4eaG9":[function(require,module,exports) {
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "quizQuestions", function () {
+  return quizQuestions;
+});
+_parcelHelpers.export(exports, "DOMselectors", function () {
+  return DOMselectors;
+});
 console.log("uwu hi cuttie");
-
-const quizQuestions = [
-  {
-    question: "who is this girl",
-    answersChoices: {
-      a: "Chizuru Ichinose",
-      b: "Ruka Sarashina",
-      c: "Sumi Sakurasawa",
-      d: "Mami Nanami",
-    },
-    correctAnswer: "c",
+const quizQuestions = [{
+  img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/66439990-408d-44fc-988a-2375b88d6183/de7cg0p-e2dcc2c3-b548-4c51-808e-b44efc8ca690.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNjY0Mzk5OTAtNDA4ZC00NGZjLTk4OGEtMjM3NWI4OGQ2MTgzXC9kZTdjZzBwLWUyZGNjMmMzLWI1NDgtNGM1MS04MDhlLWI0NGVmYzhjYTY5MC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.7Qe7SGvhwWqLbrh5ALVBTn1a-lDJNh0v1IbDinvuBy0",
+  question: "who is this girl",
+  answersChoices: {
+    a: "Chizuru Ichinose",
+    b: "Ruka Sarashina",
+    c: "Sumi Sakurasawa",
+    d: "Mami Nanami"
   },
-  {
-    question: "Which one of these is a JavaScript package manager?",
-    answersChoices: {
-      a: "Chizuru Ichinose",
-      b: "Ruka Sarashina",
-      c: "Sumi Sakurasawa",
-      d: "Mami Nanami",
-    },
-    correctAnswer: "c",
+  correctAnswer: "c"
+}, {
+  img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/66439990-408d-44fc-988a-2375b88d6183/de7cg0p-e2dcc2c3-b548-4c51-808e-b44efc8ca690.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNjY0Mzk5OTAtNDA4ZC00NGZjLTk4OGEtMjM3NWI4OGQ2MTgzXC9kZTdjZzBwLWUyZGNjMmMzLWI1NDgtNGM1MS04MDhlLWI0NGVmYzhjYTY5MC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.7Qe7SGvhwWqLbrh5ALVBTn1a-lDJNh0v1IbDinvuBy0",
+  question: "any cuties AYAYA?",
+  answersChoices: {
+    a: "Chizuru Ichinose",
+    b: "Ruka Sarashina",
+    c: "Sumi Sakurasawa",
+    d: "Mami Nanami"
   },
-];
+  correctAnswer: "d"
+}];
+const DOMselectors = {
+  displayContainer: document.querySelector("#question-container"),
+  startBtn: document.querySelector("#start-quiz-btn"),
+  nextQuesBtn: document.querySelector("#next-ques-btn")
+};
 
+},{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5gA8y":[function(require,module,exports) {
+"use strict";
+
+exports.interopDefault = function (a) {
+  return a && a.__esModule ? a : {
+    default: a
+  };
+};
+
+exports.defineInteropFlag = function (a) {
+  Object.defineProperty(a, '__esModule', {
+    value: true
+  });
+};
+
+exports.exportAll = function (source, dest) {
+  Object.keys(source).forEach(function (key) {
+    if (key === 'default' || key === '__esModule') {
+      return;
+    } // Skip duplicate re-exports when they have the same value.
+
+
+    if (key in dest && dest[key] === source[key]) {
+      return;
+    }
+
+    Object.defineProperty(dest, key, {
+      enumerable: true,
+      get: function () {
+        return source[key];
+      }
+    });
+  });
+  return dest;
+};
+
+exports.export = function (dest, destName, get) {
+  Object.defineProperty(dest, destName, {
+    enumerable: true,
+    get: get
+  });
+};
 },{}]},["21c8X","3L8AI"], "3L8AI", "parcelRequire3684")
 
 //# sourceMappingURL=index.2142d36c.js.map

@@ -1,0 +1,34 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "quizQuestions", function () {
+  return quizQuestions;
+});
+_parcelHelpers.export(exports, "DOMselectors", function () {
+  return DOMselectors;
+});
+console.log("uwu hi cuttie");
+const quizQuestions = [{
+  img: "img/sumi.png",
+  question: "who is this girl",
+  answersChoices: {
+    a: "Chizuru Ichinose",
+    b: "Ruka Sarashina",
+    c: "Sumi Sakurasawa",
+    d: "Mami Nanami"
+  },
+  correctAnswer: "c"
+}, {
+  img: "img/sumi.png",
+  question: "any cuties AYAYA?",
+  answersChoices: {
+    a: "Chizuru Ichinose",
+    b: "Ruka Sarashina",
+    c: "Sumi Sakurasawa",
+    d: "Mami Nanami"
+  },
+  correctAnswer: "d"
+}];
+const DOMselectors = {
+  displayContainer: document.querySelector("#question-container")
+};
+console.log(DOMselectors.displayContainer);
