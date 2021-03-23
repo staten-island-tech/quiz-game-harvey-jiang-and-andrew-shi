@@ -487,7 +487,6 @@ var _objects = require("./objects");
     const lengthOfArray = _objects.quizQuestions.length;
     const newQuesArray = _objects.quizQuestions.slice(lengthOfArray - 1, lengthOfArray);
     // lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
-    // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
     console.log(newQuesArray);
   }
 })();
@@ -573,4 +572,4 @@ exports.export = function (dest, destName, get) {
 };
 },{}]},["21c8X","3L8AI"], "3L8AI", "parcelRequire3684")
 
-//# sourceMappingURL=index.2142d36c.js.map
+//# sourceMappingURL=index.HASH_REF_062e9a7565ca912a5f7d6b832142d36c.js.map
