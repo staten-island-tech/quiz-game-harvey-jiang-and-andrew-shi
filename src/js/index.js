@@ -5,9 +5,42 @@ import { quizQuestions, DOMselectors } from "./objects";
 (function () {
   //IIFE POGGERS
 
+// simi working needs to change the fucntion init 
+    DOMselectors.nextQuesBtn.addEventListener("click", nextQuestion);
+
+    
+
+  function nextQuestion() {
+    const lengthOfArray = quizQuestions.length;
+    var sliceLengthOne = 3;
+    var sliceLengthTwo = 2;
+
+    if (sliceLengthOne >= 1 || sliceLengthTwo > 0) {
+      const newQuesArray = quizQuestions.slice(
+        lengthOfArray - sliceLengthOne,
+        lengthOfArray - sliceLengthTwo
+      );
+      sliceLengthOne -= 1;
+      sliceLengthTwo -= 1;
+      console.log(sliceLengthOne);
+      return newQuesArray;
+    } else {
+      console("else working?");
+    }
+
+    console.log(sliceLengthTwo);
+
+    //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
+
+    // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
+  }
+
+  const nextQuestionOne = nextQuestion();
+  console.log(nextQuestionOne);
+
   const init = function () {
     //this funtion displays all of the items based on how many are in the quizQuestion
-    const displayItems = quizQuestions.forEach((item) =>
+    const displayItems = nextQuestionOne.forEach((item) =>
       DOMselectors.displayContainer.insertAdjacentHTML(
         "afterbegin",
         ` <div id="question" class="" >${item.question}</div>
@@ -33,10 +66,7 @@ import { quizQuestions, DOMselectors } from "./objects";
           </div>
       </div>
 
-      <div class="h-25 w-25">
-        <button id="start-quiz-btn">Start</button>
-        <button id="next-ques-btn">Next</button>
-      </div>
+
 
     </div> `
       )
@@ -45,23 +75,11 @@ import { quizQuestions, DOMselectors } from "./objects";
 
   init();
 
-  const nextQuesBtn = document.querySelector("#next-ques-btn");
   //this function runs everythime  you click the next button
-  nextQuesBtn.addEventListener("click", nextQuestion);
 
   // DOMselectors.displayContainer.insertAdjacentHTML("afterbegin");
 
   //maybe i can splice and make that into a new array and for loop that 5head
 
-  function nextQuestion() {
-    const lengthOfArray = quizQuestions.length;
 
-    const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray);
-
-    //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
-
-    // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
-
-    console.log(newQuesArray);
-  }
 })();

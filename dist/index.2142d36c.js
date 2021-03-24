@@ -445,9 +445,28 @@ id) /*: string*/
 var _objects = require("./objects");
 (function () {
   // IIFE POGGERS
+  // simi working needs to change the fucntion init
+  _objects.DOMselectors.nextQuesBtn.addEventListener("click", nextQuestion);
+  function nextQuestion() {
+    const lengthOfArray = _objects.quizQuestions.length;
+    var sliceLengthOne = 3;
+    var sliceLengthTwo = 2;
+    if (sliceLengthOne >= 1 || sliceLengthTwo > 0) {
+      const newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
+      sliceLengthOne -= 1;
+      sliceLengthTwo -= 1;
+      console.log(sliceLengthOne);
+      return newQuesArray;
+    } else {
+      console("else working?");
+    }
+    console.log(sliceLengthTwo);
+  }
+  const nextQuestionOne = nextQuestion();
+  console.log(nextQuestionOne);
   const init = function () {
     // this funtion displays all of the items based on how many are in the quizQuestion
-    const displayItems = _objects.quizQuestions.forEach(item => _objects.DOMselectors.displayContainer.insertAdjacentHTML("afterbegin", ` <div id="question" class="" >${item.question}</div>
+    const displayItems = nextQuestionOne.forEach(item => _objects.DOMselectors.displayContainer.insertAdjacentHTML("afterbegin", ` <div id="question" class="" >${item.question}</div>
 
       <figure class="figure w-25 h-25">
       <img src="${item.img}" class="figure-img img-fluid" alt="sumi">
@@ -470,26 +489,11 @@ var _objects = require("./objects");
           </div>
       </div>
 
-      <div class="h-25 w-25">
-        <button id="start-quiz-btn">Start</button>
-        <button id="next-ques-btn">Next</button>
-      </div>
+
 
     </div> `));
   };
   init();
-  const nextQuesBtn = document.querySelector("#next-ques-btn");
-  // this function runs everythime  you click the next button
-  nextQuesBtn.addEventListener("click", nextQuestion);
-  // DOMselectors.displayContainer.insertAdjacentHTML("afterbegin");
-  // maybe i can splice and make that into a new array and for loop that 5head
-  function nextQuestion() {
-    const lengthOfArray = _objects.quizQuestions.length;
-    const newQuesArray = _objects.quizQuestions.slice(lengthOfArray - 1, lengthOfArray);
-    // lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
-    // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
-    console.log(newQuesArray);
-  }
 })();
 
 },{"./objects":"4eaG9"}],"4eaG9":[function(require,module,exports) {
@@ -522,6 +526,16 @@ const quizQuestions = [{
     d: "Mami Nanami"
   },
   correctAnswer: "d"
+}, {
+  img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/66439990-408d-44fc-988a-2375b88d6183/de7cg0p-e2dcc2c3-b548-4c51-808e-b44efc8ca690.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNjY0Mzk5OTAtNDA4ZC00NGZjLTk4OGEtMjM3NWI4OGQ2MTgzXC9kZTdjZzBwLWUyZGNjMmMzLWI1NDgtNGM1MS04MDhlLWI0NGVmYzhjYTY5MC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.7Qe7SGvhwWqLbrh5ALVBTn1a-lDJNh0v1IbDinvuBy0",
+  question: "So many Cuties in chat today EHEHE?",
+  answersChoices: {
+    a: "Chizuru Ichinose",
+    b: "Ruka Sarashina",
+    c: "Sumi Sakurasawa",
+    d: "Mami Nanami"
+  },
+  correctAnswer: "a"
 }];
 const DOMselectors = {
   displayContainer: document.querySelector("#question-container"),

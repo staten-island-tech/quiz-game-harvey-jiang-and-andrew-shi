@@ -1,0 +1,59 @@
+var _objects = require("./objects");
+(function () {
+  // IIFE POGGERS
+  // DOMselectors.nextQuesBtn.addEventListener("click", nextQuestion);
+  function nextQuestion() {
+    const lengthOfArray = _objects.quizQuestions.length;
+    var sliceLengthOne = 3;
+    var sliceLengthTwo = 2;
+    if (sliceLengthOne >= 1 || sliceLengthTwo > 0) {
+      const newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
+      sliceLengthOne -= 1;
+      sliceLengthTwo -= 1;
+      return newQuesArray;
+    } else {
+      console("else working?");
+    }
+    console.log(sliceLengthTwo);
+  }
+  const nextQuestionOne = nextQuestion();
+  const init = function () {
+    // this funtion displays all of the items based on how many are in the quizQuestion
+    const displayItems = nextQuestionOne.forEach(item => _objects.DOMselectors.displayContainer.insertAdjacentHTML("afterbegin", ` <div id="question" class="" >${item.question}</div>
+
+      <figure class="figure w-25 h-25">
+      <img src="${item.img}" class="figure-img img-fluid" alt="sumi">
+    </figure>
+
+      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.a}</button>
+          </div>
+          
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.b}</button>
+          </div>
+
+          <div class="col">
+            <button type="button" class="btn btn-light  btn-outline-secondary">${item.answersChoices.c}</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.d}</button>
+          </div>
+      </div>
+
+      <div class="h-25 w-25">
+        <button id="start-quiz-btn">Start</button>
+        <button id="next-ques-btn">Next</button>
+      </div>
+
+    </div> `));
+  };
+  init();
+  // this function runs everythime  you click the next button
+  // DOMselectors.displayContainer.insertAdjacentHTML("afterbegin");
+  // maybe i can splice and make that into a new array and for loop that 5head
+  if (_objects.DOMselectors.nextQuesBtn) {
+    _objects.DOMselectors.nextQuesBtn.addEventListener("click", nextQuestion);
+  }
+})();
