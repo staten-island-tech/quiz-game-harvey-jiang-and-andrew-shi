@@ -5,15 +5,13 @@ import { quizQuestions, DOMselectors } from "./objects";
 (function () {
   //IIFE POGGERS
 
-// simi working needs to change the fucntion init 
-    DOMselectors.nextQuesBtn.addEventListener("click", nextQuestion);
-
-    
+  // simi working needs to change the fucntion init
+  DOMselectors.nextQuesBtn.addEventListener("click", nextQuestion);
 
   function nextQuestion() {
     const lengthOfArray = quizQuestions.length;
-    var sliceLengthOne = 3;
-    var sliceLengthTwo = 2;
+    let sliceLengthOne = 3;
+    let sliceLengthTwo = 2;
 
     if (sliceLengthOne >= 1 || sliceLengthTwo > 0) {
       const newQuesArray = quizQuestions.slice(
@@ -80,6 +78,4 @@ import { quizQuestions, DOMselectors } from "./objects";
   // DOMselectors.displayContainer.insertAdjacentHTML("afterbegin");
 
   //maybe i can splice and make that into a new array and for loop that 5head
-
-
 })();
