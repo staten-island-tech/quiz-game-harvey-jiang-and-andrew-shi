@@ -1,0 +1,54 @@
+var _objects = require("./objects");
+(function () {
+  // IIFE POGGERS
+  // simi working needs to change the fucntion init
+  _objects.DOMselectors.nextQuesBtn.addEventListener("click", () => {
+    nextQuestion();
+    init();
+  });
+  function nextQuestion() {
+    const lengthOfArray = _objects.quizQuestions.length;
+    let sliceLengthOne = 3;
+    let sliceLengthTwo = 2;
+    if (sliceLengthOne >= 1 && sliceLengthTwo > 0) {
+      const newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
+      sliceLengthOne -= 1;
+      sliceLengthTwo -= 1;
+      console.log(sliceLengthOne);
+      console.log(sliceLengthTwo);
+      return newQuesArray;
+    } else {
+      console("else working?");
+    }
+  }
+  const nextQuestionOne = nextQuestion();
+  const init = function () {
+    // this funtion displays all of the items based on how many are in the quizQuestion
+    const displayItems = nextQuestionOne.forEach(item => _objects.DOMselectors.displayContainer.insertAdjacentHTML("afterbegin", ` <div id="question" class="" >${item.question}</div>
+
+      <figure class="figure w-25 h-25">
+      <img src="${item.img}" class="figure-img img-fluid" alt="sumi">
+    </figure>
+
+      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.a}</button>
+          </div>
+          
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.b}</button>
+          </div>
+
+          <div class="col">
+            <button type="button" class="btn btn-light  btn-outline-secondary">${item.answersChoices.c}</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.d}</button>
+          </div>
+      </div>
+
+
+
+    </div> `));
+  };
+})();

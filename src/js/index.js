@@ -3,42 +3,42 @@
 import { quizQuestions, DOMselectors } from "./objects";
 
 (function () {
-  //IIFE POGGERS
-
-  // simi working needs to change the fucntion init
-  DOMselectors.nextQuesBtn.addEventListener("click", nextQuestion);
+  const lengthOfArray = quizQuestions.length;
+  let sliceLengthOne = 3;
+  let sliceLengthTwo = 2;
+  let newQuesArray;
 
   function nextQuestion() {
-    const lengthOfArray = quizQuestions.length;
-    let sliceLengthOne = 3;
-    let sliceLengthTwo = 2;
-
-    if (sliceLengthOne >= 1 || sliceLengthTwo > 0) {
-      const newQuesArray = quizQuestions.slice(
-        lengthOfArray - sliceLengthOne,
-        lengthOfArray - sliceLengthTwo
-      );
+    if (sliceLengthOne >= 1) {
       sliceLengthOne -= 1;
-      sliceLengthTwo -= 1;
-      console.log(sliceLengthOne);
-      return newQuesArray;
+      return sliceLengthOne;
     } else {
       console("else working?");
     }
-
-    console.log(sliceLengthTwo);
 
     //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
 
     // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
   }
 
-  const nextQuestionOne = nextQuestion();
-  console.log(nextQuestionOne);
+  function nextQuestionB() {
+    // can only return 1 so need 2 funs prob can combine
+    if (sliceLengthTwo >= 0) {
+      sliceLengthTwo -= 1;
+      return sliceLengthTwo;
+    } else {
+      console.log("else working?");
+    }
+  }
 
   const init = function () {
-    //this funtion displays all of the items based on how many are in the quizQuestion
-    const displayItems = nextQuestionOne.forEach((item) =>
+    newQuesArray = quizQuestions.slice(
+      lengthOfArray - sliceLengthOne,
+      lengthOfArray - sliceLengthTwo
+    );
+    //this funtion displays all of the items based on how many are
+
+    const displayItems = newQuesArray.forEach((item) =>
       DOMselectors.displayContainer.insertAdjacentHTML(
         "afterbegin",
         ` <div id="question" class="" >${item.question}</div>
@@ -71,7 +71,12 @@ import { quizQuestions, DOMselectors } from "./objects";
     );
   };
 
-  init();
+  DOMselectors.nextQuesBtn.addEventListener("click", () => {
+    init();
+    nextQuestion();
+    nextQuestionB();
+    console.log(newQuesArray);
+  });
 
   //this function runs everythime  you click the next button
 

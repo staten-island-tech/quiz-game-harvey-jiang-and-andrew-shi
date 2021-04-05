@@ -1,0 +1,62 @@
+var _objects = require("./objects");
+(function () {
+  // IIFE POGGERS
+  // simi working needs to change the fucntion init
+  const lengthOfArray = _objects.quizQuestions.length;
+  let sliceLengthOne = 3;
+  let sliceLengthTwo = 2;
+  let newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
+  function nextQuestion() {
+    if (sliceLengthOne >= 1) {
+      sliceLengthOne -= 1;
+      return sliceLengthOne;
+    } else {
+      console("else working?");
+    }
+  }
+  function nextQuestionB() {
+    if (sliceLengthTwo >= 0) {
+      sliceLengthTwo -= 1;
+      return sliceLengthTwo;
+    } else {
+      console("else working?");
+    }
+  }
+  const nextQuestionOne = newQuesArray;
+  const init = function () {
+    // this funtion displays all of the items based on how many are in the quizQuestion
+    console.log(nextQuestionOne);
+    const displayItems = nextQuestionOne.forEach(item => _objects.DOMselectors.displayContainer.insertAdjacentHTML("afterbegin", ` <div id="question" class="" >${item.question}</div>
+
+      <figure class="figure w-25 h-25">
+      <img src="${item.img}" class="figure-img img-fluid" alt="sumi">
+    </figure>
+
+      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.a}</button>
+          </div>
+          
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.b}</button>
+          </div>
+
+          <div class="col">
+            <button type="button" class="btn btn-light  btn-outline-secondary">${item.answersChoices.c}</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.d}</button>
+          </div>
+      </div>
+
+
+
+    </div> `));
+  };
+  _objects.DOMselectors.nextQuesBtn.addEventListener("click", () => {
+    nextQuestion();
+    nextQuestionB();
+    init();
+    console.log(newQuesArray);
+  });
+})();
