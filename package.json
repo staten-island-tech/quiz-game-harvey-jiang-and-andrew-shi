@@ -2,7 +2,7 @@
   "name": "quiz-game-harvey-jiang-and-andrew-shi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.html",
   "dependencies": {
     "bootstrap": "^5.0.0-beta2",
     "parcel": "^2.0.0-beta.2"
