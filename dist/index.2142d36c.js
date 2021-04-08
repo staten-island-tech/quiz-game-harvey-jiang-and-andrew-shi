@@ -478,6 +478,12 @@ var _objects = require("./objects");
     _objects.DOMselectors.choiceC.innerHTML = newQuesArray[0].answersChoices[2].c;
     _objects.DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
+  _objects.DOMselectors.choices.addEventListener("click", e => {
+    init();
+    nextQuestion();
+    nextQuestionB();
+    console.log(e.target);
+  });
   // function quizScore() {
   // if (newQuesArray[0].answersChoices[0].correct === true) {
   // score++;
@@ -494,29 +500,10 @@ var _objects = require("./objects");
   // });
   // this funtion displays all of the items based on how many are
   // DOMselectors.nextQuesBtn.addEventListener("click", () => {});
-  _objects.DOMselectors.choiceA.addEventListener("click", () => {
-    nextQuestion();
-    nextQuestionB();
-    init();
-    console.log(score);
-  });
-  _objects.DOMselectors.choiceB.addEventListener("click", () => {
-    nextQuestion();
-    nextQuestionB();
-    init();
-    console.log(score);
-  });
-  _objects.DOMselectors.choiceC.addEventListener("click", () => {
-    nextQuestion();
-    nextQuestionB();
-    init();
-    console.log(score);
-  });
-  _objects.DOMselectors.choiceD.addEventListener("click", () => {
-    nextQuestion();
-    nextQuestionB();
-    init();
-  });
+  _objects.DOMselectors.choiceA.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceB.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceC.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceD.addEventListener("click", () => {});
   console.log(answerChoice);
 })();
 
@@ -574,7 +561,7 @@ const DOMselectors = {
   quizImg: document.querySelector("#img"),
   displayContainer: document.querySelector("#question-container"),
   startBtn: document.querySelector("#start-quiz-btn"),
-  choice: document.querySelector(".btn"),
+  choices: document.querySelector(".btn"),
   choiceA: document.querySelector("#button-a"),
   choiceB: document.querySelector("#button-b"),
   choiceC: document.querySelector("#button-c"),

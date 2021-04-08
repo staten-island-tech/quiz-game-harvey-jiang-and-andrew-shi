@@ -1,0 +1,64 @@
+var _objects = require("./objects");
+(function () {
+  let score = 0;
+  const lengthOfArray = _objects.quizQuestions.length;
+  let sliceLengthOne = 3;
+  let sliceLengthTwo = 2;
+  let newQuesArray;
+  let answerChoice = false;
+  const Index = 0;
+  function nextQuestion() {
+    if (sliceLengthOne >= 1) {
+      sliceLengthOne -= 1;
+      return sliceLengthOne;
+    } else {
+      console.log("else working?");
+    }
+  }
+  function nextQuestionB() {
+    // can only return 1 so need 2 funs prob can combine
+    if (sliceLengthTwo >= 0) {
+      sliceLengthTwo -= 1;
+      return sliceLengthTwo;
+    } else {
+      console.log("else working?");
+    }
+  }
+  const init = function () {
+    newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
+    console.log(newQuesArray[0]);
+    _objects.DOMselectors.quizQuestion.innerHTML = newQuesArray[0].question;
+    _objects.DOMselectors.quizImg.innerHTML = newQuesArray[0].img;
+    _objects.DOMselectors.choiceA.innerHTML = newQuesArray[0].answersChoices[0].a;
+    _objects.DOMselectors.choiceB.innerHTML = newQuesArray[0].answersChoices[1].b;
+    _objects.DOMselectors.choiceC.innerHTML = newQuesArray[0].answersChoices[2].c;
+    _objects.DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
+  };
+  _objects.DOMselectors.choices.addEventListener("click", e => {
+    nextQuestion();
+    nextQuestionB();
+    init();
+    console.log(e.target);
+  });
+  // function quizScore() {
+  // if (newQuesArray[0].answersChoices[0].correct === true) {
+  // score++;
+  // }
+  // }
+  // Array.from(DOMselectors.answersChoices).forEach(function (/choice) {
+  // choice.addEventListener("click", function (e) {
+  // const selectedTarget = e.target;
+  // const selectedChoice = selectedTarget.innerHTML;
+  // if (selectedChoice === Quizquestions[index].correctAnswer) {
+  // score++;
+  // }
+  // });
+  // });
+  // this funtion displays all of the items based on how many are
+  // DOMselectors.nextQuesBtn.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceA.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceB.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceC.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceD.addEventListener("click", () => {});
+  console.log(answerChoice);
+})();

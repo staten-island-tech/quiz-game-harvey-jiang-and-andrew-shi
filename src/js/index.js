@@ -51,6 +51,14 @@ import { quizQuestions, DOMselectors } from "./objects";
     DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
 
+  DOMselectors.choices.addEventListener("click", (e) => {
+    init();
+    nextQuestion();
+    nextQuestionB();
+
+    console.log(e.target);
+  });
+
   //function quizScore() {
   //if (newQuesArray[0].answersChoices[0].correct === true) {
   //score++;
@@ -70,32 +78,10 @@ import { quizQuestions, DOMselectors } from "./objects";
 
   //DOMselectors.nextQuesBtn.addEventListener("click", () => {});
 
-  DOMselectors.choiceA.addEventListener("click", () => {
-    nextQuestion();
-    nextQuestionB();
-    init();
-    console.log(score);
-  });
-
-  DOMselectors.choiceB.addEventListener("click", () => {
-    nextQuestion();
-    nextQuestionB();
-    init();
-
-    console.log(score);
-  });
-  DOMselectors.choiceC.addEventListener("click", () => {
-    nextQuestion();
-    nextQuestionB();
-    init();
-
-    console.log(score);
-  });
-  DOMselectors.choiceD.addEventListener("click", () => {
-    nextQuestion();
-    nextQuestionB();
-    init();
-  });
+  DOMselectors.choiceA.addEventListener("click", () => {});
+  DOMselectors.choiceB.addEventListener("click", () => {});
+  DOMselectors.choiceC.addEventListener("click", () => {});
+  DOMselectors.choiceD.addEventListener("click", () => {});
 
   console.log(answerChoice);
 

@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="a60f8e0cde6a6effe90044aab8273e00">
+    <title>Document</title>
+</head>
+<body>
+  
+
+<div class="container vh-200 vw-75 d-flex flex-column justify-content-center align-items-center">
+  <div id="question-container" class="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+    <div id="question" class="">Who is this girl</div>
+
+
+      <figure class="figure w-25 h-25">
+      <img src="58519ad3250167e433c2ad4aff5ab813" id="img" class="figure-img img-fluid" alt="sumi">
+    </figure>
+
+      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
+          <div class="col">
+            <button id="button-a" type="button" class="btn btn-light btn-outline-secondary"></button>
+          </div>
+
+          <div class="col">
+            <button id="button-b" type="button" class="btn btn-light btn-outline-secondary"></button>
+          </div>
+          <div class="col">
+            <button id="button-c" type="button" class="btn btn-light  btn-outline-secondary"></button>
+          </div>
+          <div class="col">
+            <button id="button-d" type="button" class="btn btn-light btn-outline-secondary"></button>
+          </div>
+      </div>
+      <!--<div class="h-25 w-25">
+      <button id="start-quiz-btn">Start</button>
+      <button id="next-ques-btn">Next</button>
+    </div>
+  -->
+
+  </div>
+
+    <script src="06dfe9f8db92a79f21cf80f953a0a070"></script>
+</div></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div id="question" class="" >question</div>
+
+      <figure class="figure w-25 h-25">
+      <img src="img/sumi.png" class="figure-img img-fluid" alt="sumi">
+    </figure>
+
+      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">answer 1</button>
+          </div>
+          
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">answer 2</button>
+          </div>
+
+          <div class="col">
+            <button type="button" class="btn btn-light  btn-outline-secondary">answer 3</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-light btn-outline-secondary">answer 4</button>
+          </div>
+      </div>
+
+      <div class="h-25 w-25">
+        <button id="start-quiz-btn">Start</button>
+        <button id="next-ques-btn">Next</button>
+      </div>
+
+    </div>
+   -->
