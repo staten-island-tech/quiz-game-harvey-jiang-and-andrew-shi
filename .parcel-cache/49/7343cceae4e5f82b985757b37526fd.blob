@@ -478,40 +478,7 @@ var _objects = require("./objects");
     _objects.DOMselectors.choiceC.innerHTML = newQuesArray[0].answersChoices[2].c;
     _objects.DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
-  _objects.DOMselectors.choiceA.addEventListener("click", e => {
-    init();
-    nextQuestion();
-    nextQuestionB();
-    console.log(e.target);
-    const asnwer = e.target.innerHTML;
-    if (asnwer === newQuesArray[0].correctAnswer) {
-      score++;
-      console.log(score);
-    }
-  });
-  _objects.DOMselectors.choiceB.addEventListener("click", e => {
-    init();
-    nextQuestion();
-    nextQuestionB();
-    console.log(e.target);
-    const asnwer = e.target.innerHTML;
-    if (asnwer === newQuesArray[0].correctAnswer) {
-      score++;
-      console.log(score);
-    }
-  });
-  _objects.DOMselectors.choiceC.addEventListener("click", e => {
-    init();
-    nextQuestion();
-    nextQuestionB();
-    console.log(e.target);
-    const asnwer = e.target.innerHTML;
-    if (asnwer === newQuesArray[0].correctAnswer) {
-      score++;
-      console.log(score);
-    }
-  });
-  _objects.DOMselectors.choiceD.addEventListener("click", e => {
+  _objects.DOMselectors.choices.addEventListener("click", e => {
     init();
     nextQuestion();
     nextQuestionB();
@@ -538,6 +505,10 @@ var _objects = require("./objects");
   // });
   // this funtion displays all of the items based on how many are
   // DOMselectors.nextQuesBtn.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceA.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceB.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceC.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceD.addEventListener("click", () => {});
   console.log(answerChoice);
 })();
 
@@ -646,4 +617,4 @@ exports.export = function (dest, destName, get) {
 };
 },{}]},["21c8X","3L8AI"], "3L8AI", "parcelRequire3684")
 
-//# sourceMappingURL=index.2142d36c.js.map
+//# sourceMappingURL=index.HASH_REF_062e9a7565ca912a5f7d6b832142d36c.js.map

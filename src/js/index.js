@@ -51,12 +51,55 @@ import { quizQuestions, DOMselectors } from "./objects";
     DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
 
-  DOMselectors.choices.addEventListener("click", (e) => {
+  DOMselectors.choiceA.addEventListener("click", (e) => {
     init();
     nextQuestion();
     nextQuestionB();
 
     console.log(e.target);
+    const asnwer = e.target.innerHTML;
+    if (asnwer === newQuesArray[0].correctAnswer) {
+      score++;
+      console.log(score);
+    }
+  });
+  DOMselectors.choiceB.addEventListener("click", (e) => {
+    init();
+    nextQuestion();
+    nextQuestionB();
+
+    console.log(e.target);
+    const asnwer = e.target.innerHTML;
+    if (asnwer === newQuesArray[0].correctAnswer) {
+      score++;
+      console.log(score);
+    }
+  });
+
+  DOMselectors.choiceC.addEventListener("click", (e) => {
+    init();
+    nextQuestion();
+    nextQuestionB();
+
+    console.log(e.target);
+    const asnwer = e.target.innerHTML;
+    if (asnwer === newQuesArray[0].correctAnswer) {
+      score++;
+      console.log(score);
+    }
+  });
+
+  DOMselectors.choiceD.addEventListener("click", (e) => {
+    init();
+    nextQuestion();
+    nextQuestionB();
+
+    console.log(e.target);
+    const asnwer = e.target.innerHTML;
+    if (asnwer === newQuesArray[0].correctAnswer) {
+      score++;
+      console.log(score);
+    }
   });
 
   //function quizScore() {
@@ -77,11 +120,6 @@ import { quizQuestions, DOMselectors } from "./objects";
   //this funtion displays all of the items based on how many are
 
   //DOMselectors.nextQuesBtn.addEventListener("click", () => {});
-
-  DOMselectors.choiceA.addEventListener("click", () => {});
-  DOMselectors.choiceB.addEventListener("click", () => {});
-  DOMselectors.choiceC.addEventListener("click", () => {});
-  DOMselectors.choiceD.addEventListener("click", () => {});
 
   console.log(answerChoice);
 
