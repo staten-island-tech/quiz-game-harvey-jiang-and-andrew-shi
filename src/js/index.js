@@ -57,15 +57,15 @@ import { quizQuestions, DOMselectors } from "./objects";
   //}
   //}
 
-  Array.from(DOMselectors.answersChoices).forEach(function (choice) {
-    choice.addEventListener("click", function (e) {
-      const selectedTarget = e.target;
-      const selectedChoice = selectedTarget.innerHTML;
-      if (selectedChoice === Quizquestions[index].correctAnswer) {
-        score++;
-      }
-    });
-  });
+  //Array.from(DOMselectors.answersChoices).forEach(function (/choice) {
+  // choice.addEventListener("click", function (e) {
+  // const selectedTarget = e.target;
+  //  const selectedChoice = selectedTarget.innerHTML;
+  //   if (selectedChoice === Quizquestions[index].correctAnswer) {
+  //      score++;
+  //    }
+  //  });
+  // });
   //this funtion displays all of the items based on how many are
 
   //DOMselectors.nextQuesBtn.addEventListener("click", () => {});
