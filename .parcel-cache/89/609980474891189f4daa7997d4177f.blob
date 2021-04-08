@@ -1,0 +1,48 @@
+var _objects = require("./objects");
+(function () {
+  // DOMselectors.choiceA.innerHTML;
+  // DOMselectors.choiceB.innerHTML;
+  // DOMselectors.choiceC.innerHTML;
+  // DOMselectors.choiceD.innerHTML;
+  const lengthOfArray = _objects.quizQuestions.length;
+  let sliceLengthOne = 3;
+  let sliceLengthTwo = 2;
+  let newQuesArray;
+  let answerChoice = false;
+  function nextQuestion() {
+    if (sliceLengthOne >= 1) {
+      sliceLengthOne -= 1;
+      return sliceLengthOne;
+    } else {
+      console("else working?");
+    }
+  }
+  function nextQuestionB() {
+    // can only return 1 so need 2 funs prob can combine
+    if (sliceLengthTwo >= 0) {
+      sliceLengthTwo -= 1;
+      return sliceLengthTwo;
+    } else {
+      console.log("else working?");
+    }
+  }
+  const init = function () {
+    newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
+    console.log(newQuesArray);
+    _objects.DOMselectors.choiceA.innerHTML = newQuesArray.answerChoices.a;
+  };
+  // this funtion displays all of the items based on how many are
+  function checkAnswers() {
+    if (newQuesArray.correctAnswer === _objects.quizQuestions[1].correctAnswer) answerChoice = true;
+    return answerChoice;
+  }
+  _objects.DOMselectors.nextQuesBtn.addEventListener("click", () => {
+    nextQuestion();
+    nextQuestionB();
+    console.log(newQuesArray);
+  });
+  _objects.DOMselectors.choiceA.addEventListener("click", () => {
+    init();
+  });
+  console.log(answerChoice);
+})();

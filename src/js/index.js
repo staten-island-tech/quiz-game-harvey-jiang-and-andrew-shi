@@ -3,17 +3,20 @@
 import { quizQuestions, DOMselectors } from "./objects";
 
 (function () {
+  let score = 0;
   const lengthOfArray = quizQuestions.length;
   let sliceLengthOne = 3;
   let sliceLengthTwo = 2;
   let newQuesArray;
+  let answerChoice = false;
+  const Index = 0;
 
   function nextQuestion() {
     if (sliceLengthOne >= 1) {
       sliceLengthOne -= 1;
       return sliceLengthOne;
     } else {
-      console("else working?");
+      console.log("else working?");
     }
 
     //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
@@ -36,47 +39,65 @@ import { quizQuestions, DOMselectors } from "./objects";
       lengthOfArray - sliceLengthOne,
       lengthOfArray - sliceLengthTwo
     );
-    //this funtion displays all of the items based on how many are
 
-    const displayItems = newQuesArray.forEach((item) =>
-      DOMselectors.displayContainer.insertAdjacentHTML(
-        "afterbegin",
-        ` <div id="question" class="" >${item.question}</div>
+    console.log(newQuesArray[0]);
 
-      <figure class="figure w-25 h-25">
-      <img src="${item.img}" class="figure-img img-fluid" alt="sumi">
-    </figure>
+    DOMselectors.quizQuestion.innerHTML = newQuesArray[0].question;
+    DOMselectors.quizImg.innerHTML = newQuesArray[0].img;
 
-      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
-          <div class="col">
-            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.a}</button>
-          </div>
-          
-          <div class="col">
-            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.b}</button>
-          </div>
-
-          <div class="col">
-            <button type="button" class="btn btn-light  btn-outline-secondary">${item.answersChoices.c}</button>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.d}</button>
-          </div>
-      </div>
-
-
-
-    </div> `
-      )
-    );
+    DOMselectors.choiceA.innerHTML = newQuesArray[0].answersChoices[0].a;
+    DOMselectors.choiceB.innerHTML = newQuesArray[0].answersChoices[1].b;
+    DOMselectors.choiceC.innerHTML = newQuesArray[0].answersChoices[2].c;
+    DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
 
-  DOMselectors.nextQuesBtn.addEventListener("click", () => {
-    init();
+  //function quizScore() {
+  //if (newQuesArray[0].answersChoices[0].correct === true) {
+  //score++;
+  //}
+  //}
+
+  Array.from(DOMselectors.answersChoices).forEach(function (choice) {
+    choice.addEventListener("click", function (e) {
+      const selectedTarget = e.target;
+      const selectedChoice = selectedTarget.innerHTML;
+      if (selectedChoice === Quizquestions[index].correctAnswer) {
+        score++;
+      }
+    });
+  });
+  //this funtion displays all of the items based on how many are
+
+  //DOMselectors.nextQuesBtn.addEventListener("click", () => {});
+
+  DOMselectors.choiceA.addEventListener("click", () => {
     nextQuestion();
     nextQuestionB();
-    console.log(newQuesArray);
+    init();
+    console.log(score);
   });
+
+  DOMselectors.choiceB.addEventListener("click", () => {
+    nextQuestion();
+    nextQuestionB();
+    init();
+
+    console.log(score);
+  });
+  DOMselectors.choiceC.addEventListener("click", () => {
+    nextQuestion();
+    nextQuestionB();
+    init();
+
+    console.log(score);
+  });
+  DOMselectors.choiceD.addEventListener("click", () => {
+    nextQuestion();
+    nextQuestionB();
+    init();
+  });
+
+  console.log(answerChoice);
 
   //this function runs everythime  you click the next button
 

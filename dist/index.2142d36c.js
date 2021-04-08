@@ -444,16 +444,19 @@ id) /*: string*/
 },{}],"3L8AI":[function(require,module,exports) {
 var _objects = require("./objects");
 (function () {
+  let score = 0;
   const lengthOfArray = _objects.quizQuestions.length;
   let sliceLengthOne = 3;
   let sliceLengthTwo = 2;
   let newQuesArray;
+  let answerChoice = false;
+  const Index = 0;
   function nextQuestion() {
     if (sliceLengthOne >= 1) {
       sliceLengthOne -= 1;
       return sliceLengthOne;
     } else {
-      console("else working?");
+      console.log("else working?");
     }
   }
   function nextQuestionB() {
@@ -467,40 +470,54 @@ var _objects = require("./objects");
   }
   const init = function () {
     newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
-    // this funtion displays all of the items based on how many are
-    const displayItems = newQuesArray.forEach(item => _objects.DOMselectors.displayContainer.insertAdjacentHTML("afterbegin", ` <div id="question" class="" >${item.question}</div>
-
-      <figure class="figure w-25 h-25">
-      <img src="${item.img}" class="figure-img img-fluid" alt="sumi">
-    </figure>
-
-      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
-          <div class="col">
-            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.a}</button>
-          </div>
-          
-          <div class="col">
-            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.b}</button>
-          </div>
-
-          <div class="col">
-            <button type="button" class="btn btn-light  btn-outline-secondary">${item.answersChoices.c}</button>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-light btn-outline-secondary">${item.answersChoices.d}</button>
-          </div>
-      </div>
-
-
-
-    </div> `));
+    console.log(newQuesArray[0]);
+    _objects.DOMselectors.quizQuestion.innerHTML = newQuesArray[0].question;
+    _objects.DOMselectors.quizImg.innerHTML = newQuesArray[0].img;
+    _objects.DOMselectors.choiceA.innerHTML = newQuesArray[0].answersChoices[0].a;
+    _objects.DOMselectors.choiceB.innerHTML = newQuesArray[0].answersChoices[1].b;
+    _objects.DOMselectors.choiceC.innerHTML = newQuesArray[0].answersChoices[2].c;
+    _objects.DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
-  _objects.DOMselectors.nextQuesBtn.addEventListener("click", () => {
-    init();
+  // function quizScore() {
+  // if (newQuesArray[0].answersChoices[0].correct === true) {
+  // score++;
+  // }
+  // }
+  Array.from(_objects.DOMselectors.answersChoices).forEach(function (choice) {
+    choice.addEventListener("click", function (e) {
+      const selectedTarget = e.target;
+      const selectedChoice = selectedTarget.innerHTML;
+      if (selectedChoice === Quizquestions[index].correctAnswer) {
+        score++;
+      }
+    });
+  });
+  // this funtion displays all of the items based on how many are
+  // DOMselectors.nextQuesBtn.addEventListener("click", () => {});
+  _objects.DOMselectors.choiceA.addEventListener("click", () => {
     nextQuestion();
     nextQuestionB();
-    console.log(newQuesArray);
+    init();
+    console.log(score);
   });
+  _objects.DOMselectors.choiceB.addEventListener("click", () => {
+    nextQuestion();
+    nextQuestionB();
+    init();
+    console.log(score);
+  });
+  _objects.DOMselectors.choiceC.addEventListener("click", () => {
+    nextQuestion();
+    nextQuestionB();
+    init();
+    console.log(score);
+  });
+  _objects.DOMselectors.choiceD.addEventListener("click", () => {
+    nextQuestion();
+    nextQuestionB();
+    init();
+  });
+  console.log(answerChoice);
 })();
 
 },{"./objects":"4eaG9"}],"4eaG9":[function(require,module,exports) {
@@ -515,38 +532,53 @@ _parcelHelpers.export(exports, "DOMselectors", function () {
 const quizQuestions = [{
   img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/66439990-408d-44fc-988a-2375b88d6183/de7cg0p-e2dcc2c3-b548-4c51-808e-b44efc8ca690.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNjY0Mzk5OTAtNDA4ZC00NGZjLTk4OGEtMjM3NWI4OGQ2MTgzXC9kZTdjZzBwLWUyZGNjMmMzLWI1NDgtNGM1MS04MDhlLWI0NGVmYzhjYTY5MC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.7Qe7SGvhwWqLbrh5ALVBTn1a-lDJNh0v1IbDinvuBy0",
   question: "who is this girl",
-  answersChoices: {
-    a: "Chizuru Ichinose",
-    b: "Ruka Sarashina",
-    c: "Sumi Sakurasawa",
+  answersChoices: [{
+    a: "Chizuru Ichinose"
+  }, {
+    b: "Ruka Sarashina"
+  }, {
+    c: "Sumi Sakurasawa"
+  }, {
     d: "Mami Nanami"
-  },
-  correctAnswer: "c"
+  }],
+  correctAnswer: "Sumi Sakurasawa"
 }, {
   img: "https://i.redd.it/loerq2qqr4n51.png",
   question: "any cuties AYAYA?",
-  answersChoices: {
-    a: "Chizuru Ichinose",
-    b: "Ruka Sarashina",
-    c: "Sumi Sakurasawa",
-    d: "Mami Nanami"
-  },
-  correctAnswer: "d"
+  answersChoices: [{
+    a: "Wosaodjka"
+  }, {
+    b: "RUKA"
+  }, {
+    c: " Sakurasawa"
+  }, {
+    d: "Nanami"
+  }],
+  correctAnswer: "Wosaodjka"
 }, {
   img: "https://i.redd.it/mnxufx3rd6l51.jpg",
   question: "So many Cuties in chat today EHEHE?",
-  answersChoices: {
-    a: "Chizuru Ichinose",
-    b: "Ruka Sarashina",
-    c: "Sumi Sakurasawa",
-    d: "Mami Nanami"
-  },
-  correctAnswer: "a"
+  answersChoices: [{
+    a: "asdasda"
+  }, {
+    b: " Sarashina"
+  }, {
+    c: "Sumi"
+  }, {
+    d: "Mami"
+  }],
+  correctAnswer: "Mami"
 }];
 const DOMselectors = {
+  quizQuestion: document.querySelector("#question"),
+  quizImg: document.querySelector("#img"),
   displayContainer: document.querySelector("#question-container"),
   startBtn: document.querySelector("#start-quiz-btn"),
-  nextQuesBtn: document.querySelector("#next-ques-btn")
+  choice: document.querySelector(".btn"),
+  choiceA: document.querySelector("#button-a"),
+  choiceB: document.querySelector("#button-b"),
+  choiceC: document.querySelector("#button-c"),
+  choiceD: document.querySelector("#button-d")
 };
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5gA8y":[function(require,module,exports) {
