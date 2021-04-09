@@ -11,27 +11,12 @@ import { quizQuestions, DOMselectors } from "./objects";
   let answerChoice = false;
   const Index = 0;
 
-  function nextQuestion() {
-    if (sliceLengthOne >= 1) {
-      sliceLengthOne -= 1;
-      return sliceLengthOne;
-    } else {
-      console.log("else working?");
-    }
+  //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
 
-    //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
-
-    // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
-  }
+  // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
 
   function nextQuestionB() {
     // can only return 1 so need 2 funs prob can combine
-    if (sliceLengthTwo >= 0) {
-      sliceLengthTwo -= 1;
-      return sliceLengthTwo;
-    } else {
-      console.log("else working?");
-    }
   }
 
   const init = function () {
@@ -51,55 +36,28 @@ import { quizQuestions, DOMselectors } from "./objects";
     DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
 
-  DOMselectors.choiceA.addEventListener("click", (e) => {
-    init();
-    nextQuestion();
-    nextQuestionB();
+  init();
 
-    console.log(e.target);
-    const asnwer = e.target.innerHTML;
-    if (asnwer === newQuesArray[0].correctAnswer) {
-      score++;
-      console.log(score);
-    }
-  });
-  DOMselectors.choiceB.addEventListener("click", (e) => {
-    init();
-    nextQuestion();
-    nextQuestionB();
+  const btns = document.querySelectorAll(".btn");
 
-    console.log(e.target);
-    const asnwer = e.target.innerHTML;
-    if (asnwer === newQuesArray[0].correctAnswer) {
-      score++;
-      console.log(score);
-    }
-  });
+  btns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      init();
+      console.log(e.target);
+      const asnwer = e.target.innerHTML;
+      if (asnwer === newQuesArray[0].correctAnswer) {
+        score++;
+        console.log(score);
+      }
 
-  DOMselectors.choiceC.addEventListener("click", (e) => {
-    init();
-    nextQuestion();
-    nextQuestionB();
-
-    console.log(e.target);
-    const asnwer = e.target.innerHTML;
-    if (asnwer === newQuesArray[0].correctAnswer) {
-      score++;
-      console.log(score);
-    }
-  });
-
-  DOMselectors.choiceD.addEventListener("click", (e) => {
-    init();
-    nextQuestion();
-    nextQuestionB();
-
-    console.log(e.target);
-    const asnwer = e.target.innerHTML;
-    if (asnwer === newQuesArray[0].correctAnswer) {
-      score++;
-      console.log(score);
-    }
+      if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
+        sliceLengthTwo -= 1;
+        sliceLengthOne -= 1;
+      } else {
+        console.log("else working?");
+      }
+      init();
+    });
   });
 
   //function quizScore() {

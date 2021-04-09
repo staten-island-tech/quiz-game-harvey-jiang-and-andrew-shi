@@ -451,9 +451,23 @@ var _objects = require("./objects");
   let newQuesArray;
   let answerChoice = false;
   const Index = 0;
-  // lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
-  // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
-  function nextQuestionB() {}
+  function nextQuestion() {
+    if (sliceLengthOne >= 1) {
+      sliceLengthOne -= 1;
+      return sliceLengthOne;
+    } else {
+      console.log("else working?");
+    }
+  }
+  function nextQuestionB() {
+    // can only return 1 so need 2 funs prob can combine
+    if (sliceLengthTwo >= 0) {
+      sliceLengthTwo -= 1;
+      return sliceLengthTwo;
+    } else {
+      console.log("else working?");
+    }
+  }
   const init = function () {
     newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
     console.log(newQuesArray[0]);
@@ -465,24 +479,16 @@ var _objects = require("./objects");
     _objects.DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
   init();
-  const btns = document.querySelectorAll(".btn");
-  btns.forEach(btn => {
-    btn.addEventListener("click", e => {
-      init();
-      console.log(e.target);
-      const asnwer = e.target.innerHTML;
-      if (asnwer === newQuesArray[0].correctAnswer) {
-        score++;
-        console.log(score);
-      }
-      if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
-        sliceLengthTwo -= 1;
-        sliceLengthOne -= 1;
-      } else {
-        console.log("else working?");
-      }
-      init();
-    });
+  _objects.DOMselectors.choiceA.addEventListener("click", e => {
+    init();
+    nextQuestion();
+    nextQuestionB();
+    console.log(e.target);
+    const asnwer = e.target.innerHTML;
+    if (asnwer === newQuesArray[0].correctAnswer) {
+      score++;
+      console.log(score);
+    }
   });
   // function quizScore() {
   // if (newQuesArray[0].answersChoices[0].correct === true) {
@@ -607,4 +613,4 @@ exports.export = function (dest, destName, get) {
 };
 },{}]},["21c8X","3L8AI"], "3L8AI", "parcelRequire3684")
 
-//# sourceMappingURL=index.2142d36c.js.map
+//# sourceMappingURL=index.HASH_REF_062e9a7565ca912a5f7d6b832142d36c.js.map

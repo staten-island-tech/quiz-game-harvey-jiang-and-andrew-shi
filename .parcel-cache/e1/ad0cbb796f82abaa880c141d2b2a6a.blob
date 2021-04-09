@@ -463,6 +463,12 @@ var _objects = require("./objects");
     _objects.DOMselectors.choiceB.innerHTML = newQuesArray[0].answersChoices[1].b;
     _objects.DOMselectors.choiceC.innerHTML = newQuesArray[0].answersChoices[2].c;
     _objects.DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
+    if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
+      sliceLengthTwo -= 1;
+      sliceLengthOne -= 1;
+    } else {
+      console.log("else working?");
+    }
   };
   init();
   const btns = document.querySelectorAll(".btn");
@@ -475,13 +481,6 @@ var _objects = require("./objects");
         score++;
         console.log(score);
       }
-      if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
-        sliceLengthTwo -= 1;
-        sliceLengthOne -= 1;
-      } else {
-        console.log("else working?");
-      }
-      init();
     });
   });
   // function quizScore() {
@@ -607,4 +606,4 @@ exports.export = function (dest, destName, get) {
 };
 },{}]},["21c8X","3L8AI"], "3L8AI", "parcelRequire3684")
 
-//# sourceMappingURL=index.2142d36c.js.map
+//# sourceMappingURL=index.HASH_REF_062e9a7565ca912a5f7d6b832142d36c.js.map

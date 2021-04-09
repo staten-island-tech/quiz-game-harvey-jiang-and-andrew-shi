@@ -41,7 +41,7 @@ const DOMselectors = {
   quizImg: document.querySelector("#img"),
   displayContainer: document.querySelector("#question-container"),
   startBtn: document.querySelector("#start-quiz-btn"),
-  choices: document.querySelector(".btn"),
+
   choiceA: document.querySelector("#button-a"),
   choiceB: document.querySelector("#button-b"),
   choiceC: document.querySelector("#button-c"),
