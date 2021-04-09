@@ -59,7 +59,7 @@ import { quizQuestions, DOMselectors } from "./objects";
       init();
     });
   });
-
+  //yya worls
   //function quizScore() {
   //if (newQuesArray[0].answersChoices[0].correct === true) {
   //score++;
