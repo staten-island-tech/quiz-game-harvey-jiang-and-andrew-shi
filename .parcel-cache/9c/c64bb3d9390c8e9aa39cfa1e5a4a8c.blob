@@ -1,0 +1,47 @@
+var _objects = require("./objects");
+(function () {
+  let score = 0;
+  const lengthOfArray = _objects.quizQuestions.length;
+  let sliceLengthOne = 3;
+  let sliceLengthTwo = 2;
+  let newQuesArray;
+  const Index = 0;
+  // lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
+  // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
+  const init = function () {
+    newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
+    console.log(newQuesArray[0]);
+    _objects.DOMselectors.quizQuestion.innerHTML = newQuesArray[0].question;
+    _objects.DOMselectors.quizImg.innerHTML = newQuesArray[0].img;
+    _objects.DOMselectors.choiceA.innerHTML = newQuesArray[0].answersChoices[0].a;
+    _objects.DOMselectors.choiceB.innerHTML = newQuesArray[0].answersChoices[1].b;
+    _objects.DOMselectors.choiceC.innerHTML = newQuesArray[0].answersChoices[2].c;
+    _objects.DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
+  };
+  const btns = document.querySelectorAll(".btn");
+  btns.forEach(btn => {
+    btn.addEventListener("click", e => {
+      init();
+      const selectedTarget = e.target;
+      const asnwer = e.target.innerHTML;
+      if (asnwer === newQuesArray[0].correctAnswer) {
+        score++;
+        selectedTarget.style.backgroundColor = "green";
+        console.log(score);
+      } else {
+        selectedTarget.style.backgroundColor = "red";
+      }
+      if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
+        sliceLengthTwo -= 1;
+        sliceLengthOne -= 1;
+      } else {
+        console.log("else working?");
+      }
+      setTimeout(() => {
+        selectedTarget.style.backgroundColor = "initial";
+        init();
+      }, 1000);
+    });
+  });
+  console.log(choiceA.style.backgroundColor);
+})();

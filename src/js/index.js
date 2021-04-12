@@ -8,16 +8,20 @@ import { quizQuestions, DOMselectors } from "./objects";
   let sliceLengthOne = 3;
   let sliceLengthTwo = 2;
   let newQuesArray;
-  let answerChoice = false;
-  const Index = 0;
+  let index = 0;
+
+  DOMselectors.displayContainer.classList.add("d-none");
+
+  DOMselectors.startBtn.addEventListener("click", () => {
+    DOMselectors.displayContainer.classList.remove("d-none");
+    DOMselectors.startBtn.classList.add("d-none");
+  });
+
+  //DOMselectors.displayContainer.classList.remove("d-none");
 
   //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
 
   // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
-
-  function nextQuestionB() {
-    // can only return 1 so need 2 funs prob can combine
-  }
 
   const init = function () {
     newQuesArray = quizQuestions.slice(
@@ -36,18 +40,19 @@ import { quizQuestions, DOMselectors } from "./objects";
     DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
 
-  init();
-
-  const btns = document.querySelectorAll(".btn");
+  const btns = document.querySelectorAll(".btn-outline-warning");
 
   btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       init();
-      console.log(e.target);
+      const selectedTarget = e.target;
       const asnwer = e.target.innerHTML;
       if (asnwer === newQuesArray[0].correctAnswer) {
         score++;
+        selectedTarget.style.backgroundColor = "green";
         console.log(score);
+      } else {
+        selectedTarget.style.backgroundColor = "red";
       }
 
       if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
@@ -56,34 +61,16 @@ import { quizQuestions, DOMselectors } from "./objects";
       } else {
         console.log("else working?");
       }
-      init();
+
+      index++;
+      console.log(index);
+
+      setTimeout(() => {
+        selectedTarget.style.backgroundColor = "initial";
+        init();
+      }, 800);
     });
   });
-  //yya worls
-  //function quizScore() {
-  //if (newQuesArray[0].answersChoices[0].correct === true) {
-  //score++;
-  //}
-  //}
-
-  //Array.from(DOMselectors.answersChoices).forEach(function (/choice) {
-  // choice.addEventListener("click", function (e) {
-  // const selectedTarget = e.target;
-  //  const selectedChoice = selectedTarget.innerHTML;
-  //   if (selectedChoice === Quizquestions[index].correctAnswer) {
-  //      score++;
-  //    }
-  //  });
-  // });
-  //this funtion displays all of the items based on how many are
-
-  //DOMselectors.nextQuesBtn.addEventListener("click", () => {});
-
-  console.log(answerChoice);
-
-  //this function runs everythime  you click the next button
-
-  // DOMselectors.displayContainer.insertAdjacentHTML("afterbegin");
 
   //maybe i can splice and make that into a new array and for loop that 5head
 })();
