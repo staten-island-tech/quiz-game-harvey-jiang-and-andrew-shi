@@ -450,14 +450,12 @@ var _objects = require("./objects");
   let sliceLengthTwo = lengthOfArray - 1;
   let newQuesArray;
   let index = 0;
-  // starting padge add
   _objects.DOMselectors.startBtn.addEventListener("click", () => {
     _objects.DOMselectors.displayContainer.classList.remove("d-none");
     _objects.DOMselectors.startPage.classList.add("d-none");
   });
   // lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
   // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
-  // displays questions
   const init = function () {
     newQuesArray = _objects.quizQuestions.slice(lengthOfArray - sliceLengthOne, lengthOfArray - sliceLengthTwo);
     console.log(newQuesArray[0]);
@@ -468,7 +466,7 @@ var _objects = require("./objects");
     _objects.DOMselectors.choiceC.innerHTML = newQuesArray[0].answersChoices[2].c;
     _objects.DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
-  // for each button add a event lister that goes green when correct red when not
+  // for each button add a event lister
   _objects.DOMselectors.btns.forEach(btn => {
     btn.addEventListener("click", e => {
       init();
@@ -653,4 +651,4 @@ exports.export = function (dest, destName, get) {
 };
 },{}]},["21c8X","3L8AI"], "3L8AI", "parcelRequire3684")
 
-//# sourceMappingURL=index.2142d36c.js.map
+//# sourceMappingURL=index.HASH_REF_062e9a7565ca912a5f7d6b832142d36c.js.map
