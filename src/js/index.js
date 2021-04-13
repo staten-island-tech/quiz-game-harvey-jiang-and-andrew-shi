@@ -10,8 +10,6 @@ import { quizQuestions, DOMselectors } from "./objects";
   let newQuesArray;
   let index = 0;
 
-  DOMselectors.displayContainer.classList.add("d-none");
-
   DOMselectors.startBtn.addEventListener("click", () => {
     DOMselectors.displayContainer.classList.remove("d-none");
     DOMselectors.startPage.classList.add("d-none");
