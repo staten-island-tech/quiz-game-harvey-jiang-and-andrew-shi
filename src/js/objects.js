@@ -68,8 +68,9 @@ const quizQuestions = [
 const DOMselectors = {
   btns: document.querySelectorAll(".btn-light"),
   quizQuestion: document.querySelector("#question"),
-  quizImg: document.querySelector(".figure"),
+  quizImg: document.querySelector("#img-container"),
   displayContainer: document.querySelector("#question-container"),
+  startPage: document.querySelector("#start-page"),
   startBtn: document.querySelector("#start-quiz-btn"),
   redoQuizBtn: document.querySelector("#redo-quiz-btn"),
   score: document.querySelector("#score"),

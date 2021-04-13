@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="a60f8e0cde6a6effe90044aab8273e00">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div class="container vh-100 vw-100 d-flex flex-column justify-content-center align-items-center">
+  <div id="start-page" class="flex-column w-75 h-75 justify-content-center align-items-center d-flex">
+    <div class="w-50 h-25 justify-content-center align-items-center d-flex text-center fs-1">A small and sweet anime quiz</div>
+    <figure class="figure w-50 overflow-hidden">
+      <img src="fd1bb1e4739b5fe46db3025af5b68b9b" id="img" class="img-fluid" alt="sumi">
+    </figure>
+    <div class="w-75 h-25 justify-content-center align-items-center d-flex">
+    <button id="start-quiz-btn" type="button" class="btn btn-outline-dark w-100 h-50">Start</button>
+  </div>
+  </div>
+  <div id="question-container" class="w-75 h-75 d-flex flex-column justify-content-center align-items-center">
+    <div id="question" class="justify-content-center text-center">Who is this girl</div>
+
+
+      <figure class="figure w-50 overflow-hidden">
+      <img src="58519ad3250167e433c2ad4aff5ab813" id="img" class="img-fluid" alt="sumi">
+    </figure>
+
+      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
+          <div class="col">
+            <button id="button-a" type="button" class="btn btn-light">Chizuru Ichinose</button>
+          </div>
+
+          <div class="col">
+            <button id="button-b" type="button" class="btn btn-light">Ruka Sarashina</button>
+          </div>
+          <div class="col">
+            <button id="button-c" type="button" class="btn btn-light">Sumi Sakurasawa</button>
+          </div>
+          <div class="col">
+            <button id="button-d" type="button" class="btn btn-light">Mami Nanami</button>
+          </div>
+      </div>
+  </div>
+  <div id="end-page" class="h-50 w-50 d-none">
+    <div id="score"></div>
+    <div>Click on the button to retake the quiz</div>
+   <button id="redo-quiz-btn">Redo Quiz</button>
+ </div>
+
+    <script src="06dfe9f8db92a79f21cf80f953a0a070"></script>
+</div></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

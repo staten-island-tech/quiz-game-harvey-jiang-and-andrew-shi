@@ -453,7 +453,7 @@ var _objects = require("./objects");
   _objects.DOMselectors.displayContainer.classList.add("d-none");
   _objects.DOMselectors.startBtn.addEventListener("click", () => {
     _objects.DOMselectors.displayContainer.classList.remove("d-none");
-    _objects.DOMselectors.startBtn.classList.add("d-none");
+    _objects.DOMselectors.startPage.classList.add("d-none");
   });
   // lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
   // const newQuesArray = quizQuestions.slice(lengthOfArray - 1, lengthOfArray); to keep going down need to subtract to both
@@ -474,9 +474,11 @@ var _objects = require("./objects");
       const asnwer = e.target.innerHTML;
       if (asnwer === newQuesArray[0].correctAnswer) {
         score++;
-        selectedTarget.style.backgroundColor = "green";
+        selectedTarget.classList.remove("btn-light");
+        selectedTarget.classList.add("btn-success");
       } else {
-        selectedTarget.style.backgroundColor = "red";
+        selectedTarget.classList.remove("btn-light");
+        selectedTarget.classList.add("btn-danger");
       }
       if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
         sliceLengthTwo -= 1;
@@ -484,7 +486,13 @@ var _objects = require("./objects");
       }
       index++;
       setTimeout(() => {
-        selectedTarget.style.backgroundColor = "initial";
+        if (selectedTarget.classList === "btn-success") {
+          selectedTarget.classList.add("btn-light");
+          selectedTarget.classList.remove("btn-success");
+        } else {
+          selectedTarget.classList.add("btn-light");
+          selectedTarget.classList.remove("btn-danger");
+        }
         init();
       }, 700);
       endResultPage();
@@ -586,8 +594,9 @@ const quizQuestions = [{
 const DOMselectors = {
   btns: document.querySelectorAll(".btn-light"),
   quizQuestion: document.querySelector("#question"),
-  quizImg: document.querySelector(".figure"),
+  quizImg: document.querySelector("#img-container"),
   displayContainer: document.querySelector("#question-container"),
+  startPage: document.querySelector("#start-page"),
   startBtn: document.querySelector("#start-quiz-btn"),
   redoQuizBtn: document.querySelector("#redo-quiz-btn"),
   score: document.querySelector("#score"),

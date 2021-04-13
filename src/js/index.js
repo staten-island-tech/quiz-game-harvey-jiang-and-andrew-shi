@@ -14,7 +14,7 @@ import { quizQuestions, DOMselectors } from "./objects";
 
   DOMselectors.startBtn.addEventListener("click", () => {
     DOMselectors.displayContainer.classList.remove("d-none");
-    DOMselectors.startBtn.classList.add("d-none");
+    DOMselectors.startPage.classList.add("d-none");
   });
 
   //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
@@ -46,9 +46,11 @@ import { quizQuestions, DOMselectors } from "./objects";
       const asnwer = e.target.innerHTML;
       if (asnwer === newQuesArray[0].correctAnswer) {
         score++;
-        selectedTarget.style.backgroundColor = "green";
+        selectedTarget.classList.remove("btn-light");
+        selectedTarget.classList.add("btn-success");
       } else {
-        selectedTarget.style.backgroundColor = "red";
+        selectedTarget.classList.remove("btn-light");
+        selectedTarget.classList.add("btn-danger");
       }
 
       if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
@@ -58,7 +60,13 @@ import { quizQuestions, DOMselectors } from "./objects";
       index++;
 
       setTimeout(() => {
-        selectedTarget.style.backgroundColor = "initial";
+        if (selectedTarget.classList === "btn-success") {
+          selectedTarget.classList.add("btn-light");
+          selectedTarget.classList.remove("btn-success");
+        } else {
+          selectedTarget.classList.add("btn-light");
+          selectedTarget.classList.remove("btn-danger");
+        }
         init();
       }, 700);
 
