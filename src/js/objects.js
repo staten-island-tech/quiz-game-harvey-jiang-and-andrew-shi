@@ -13,7 +13,7 @@ const quizQuestions = [
   },
   {
     img:
-      '<img src="https://cdn.discordapp.com/attachments/686048772857397451/831297245172465684/image0.jpg" id="img" class="img-fluid" alt="sumi">',
+      '<img src="https://cdn.discordapp.com/attachments/686048772857397451/831297245172465684/image0.jpg" id="img" class="img-fluid" alt="Lucy Heartfilia">',
 
     question: "Who is this girl?(from fariy tale)",
     answersChoices: [
@@ -27,7 +27,7 @@ const quizQuestions = [
 
   {
     img:
-      '<img src="https://static3.cbrimages.com/wordpress/wp-content/uploads/2020/04/Featured-Image-Shirou-and-Saber-Cropped.jpg?q=50&fit=crop&w=943&h=500" id="img" class="img-fluid" alt="sumi">',
+      '<img src="https://static3.cbrimages.com/wordpress/wp-content/uploads/2020/04/Featured-Image-Shirou-and-Saber-Cropped.jpg?q=50&fit=crop&w=943&h=500" id="img" class="img-fluid" alt="Fate">',
     question: "Which anime series is this character from?",
     answersChoices: [
       { a: "Fate" },
@@ -40,7 +40,7 @@ const quizQuestions = [
 
   {
     img:
-      '<img src="https://i1.wp.com/anitrendz.net/news/wp-content/uploads/2020/09/Horimiya-Feature-Image.png?w=636&ssl=1" id="img" class="img-fluid" alt="sumi">',
+      '<img src="https://i1.wp.com/anitrendz.net/news/wp-content/uploads/2020/09/Horimiya-Feature-Image.png?w=636&ssl=1" id="img" class="img-fluid" alt="Izumi Miyamura">',
     question: "What is the name of the boy in the image?",
     answersChoices: [
       { a: "kyouko Hori" },
@@ -53,7 +53,7 @@ const quizQuestions = [
 
   {
     img:
-      '<img src="https://i.pinimg.com/originals/c3/d5/06/c3d5066c1f9ca74e32c19ed029fef4bd.jpg"id="img" class="img-fluid" alt="sumi">',
+      '<img src="https://i.pinimg.com/originals/c3/d5/06/c3d5066c1f9ca74e32c19ed029fef4bd.jpg"id="img" class="img-fluid" alt="sumi Miskasa Ackerman">',
     question: "What is the name of the girl in the image?",
     answersChoices: [
       { a: "Levi" },
