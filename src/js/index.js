@@ -5,8 +5,8 @@ import { quizQuestions, DOMselectors } from "./objects";
 (function () {
   let score = 0;
   const lengthOfArray = quizQuestions.length;
-  let sliceLengthOne = 3;
-  let sliceLengthTwo = 2;
+  let sliceLengthOne = lengthOfArray;
+  let sliceLengthTwo = lengthOfArray - 1;
   let newQuesArray;
   let index = 0;
 
@@ -16,8 +16,6 @@ import { quizQuestions, DOMselectors } from "./objects";
     DOMselectors.displayContainer.classList.remove("d-none");
     DOMselectors.startBtn.classList.add("d-none");
   });
-
-  //DOMselectors.displayContainer.classList.remove("d-none");
 
   //lengthOfArray -lengthOfArray will give me 0 which is the first index const newQuesArray = quizQuestions.slice(lengthOfArray - lengthofArray, lengthOfArray - 1
 
@@ -32,6 +30,7 @@ import { quizQuestions, DOMselectors } from "./objects";
     console.log(newQuesArray[0]);
 
     DOMselectors.quizQuestion.innerHTML = newQuesArray[0].question;
+
     DOMselectors.quizImg.innerHTML = newQuesArray[0].img;
 
     DOMselectors.choiceA.innerHTML = newQuesArray[0].answersChoices[0].a;
@@ -50,7 +49,6 @@ import { quizQuestions, DOMselectors } from "./objects";
       if (asnwer === newQuesArray[0].correctAnswer) {
         score++;
         selectedTarget.style.backgroundColor = "green";
-        console.log(score);
       } else {
         selectedTarget.style.backgroundColor = "red";
       }
@@ -63,14 +61,33 @@ import { quizQuestions, DOMselectors } from "./objects";
       }
 
       index++;
-      console.log(index);
 
       setTimeout(() => {
         selectedTarget.style.backgroundColor = "initial";
         init();
       }, 800);
+
+      endResultPage();
     });
   });
+
+  function endResultPage() {
+    if (index === lengthOfArray) {
+      DOMselectors.endPage.classList.remove("d-none");
+      DOMselectors.displayContainer.classList.add("d-none");
+      DOMselectors.score.innerHTML =
+        "you got a " + (score / index) * 100 + " out of 100";
+    }
+    DOMselectors.redoQuizBtn.addEventListener("click", () => {
+      index = 0;
+      score = 0;
+      sliceLengthOne = lengthOfArray;
+      sliceLengthTwo = lengthOfArray - 1;
+      DOMselectors.displayContainer.classList.remove("d-none");
+      DOMselectors.endPage.classList.add("d-none");
+      init();
+    });
+  }
 
   //maybe i can splice and make that into a new array and for loop that 5head
 })();
