@@ -66,6 +66,7 @@ const quizQuestions = [
 ];
 
 const DOMselectors = {
+  btns: document.querySelectorAll(".btn-light"),
   quizQuestion: document.querySelector("#question"),
   quizImg: document.querySelector(".figure"),
   displayContainer: document.querySelector("#question-container"),

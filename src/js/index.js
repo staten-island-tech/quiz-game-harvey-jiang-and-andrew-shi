@@ -39,9 +39,7 @@ import { quizQuestions, DOMselectors } from "./objects";
     DOMselectors.choiceD.innerHTML = newQuesArray[0].answersChoices[3].d;
   };
 
-  const btns = document.querySelectorAll(".btn-outline-warning");
-
-  btns.forEach((btn) => {
+  DOMselectors.btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       init();
       const selectedTarget = e.target;
@@ -56,16 +54,13 @@ import { quizQuestions, DOMselectors } from "./objects";
       if (sliceLengthTwo >= 0 && sliceLengthOne >= 1) {
         sliceLengthTwo -= 1;
         sliceLengthOne -= 1;
-      } else {
-        console.log("else working?");
       }
-
       index++;
 
       setTimeout(() => {
         selectedTarget.style.backgroundColor = "initial";
         init();
-      }, 800);
+      }, 700);
 
       endResultPage();
     });

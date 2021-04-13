@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.HASH_REF_4e4b48d14b05138322efb086ec8548c3.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div class="container vh-100 vw-100 d-flex flex-column justify-content-center align-items-center con-bc-color">
+  <div class="w-75 h-75 justify-content-center align-items-center">
+    <div>A small and sweet anime quiz</div>
+    <figure class="figure w-50 h-50 overflow-hidden">
+      <img src="https://preview.redd.it/loerq2qqr4n51.png?auto=webp&s=2d73ddf6c46e6f75f9b44407f66c82a9365b9195" id="img" class="img-fluid" alt="sumi">
+    </figure>
+    <button id="start-quiz-btn" type="button" class="btn btn-outline-dark">Start</button>
+  </div>
+  <div id="question-container" class="w-75 h-75 d-flex flex-column justify-content-center align-items-center">
+    <div id="question" class="justify-content-center">Who is this girl</div>
+
+
+      <figure class="figure w-50 h-50 overflow-hidden">
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/66439990-408d-44fc-988a-2375b88d6183/de7cg0p-e2dcc2c3-b548-4c51-808e-b44efc8ca690.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNjY0Mzk5OTAtNDA4ZC00NGZjLTk4OGEtMjM3NWI4OGQ2MTgzXC9kZTdjZzBwLWUyZGNjMmMzLWI1NDgtNGM1MS04MDhlLWI0NGVmYzhjYTY5MC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.7Qe7SGvhwWqLbrh5ALVBTn1a-lDJNh0v1IbDinvuBy0" id="img" class="img-fluid" alt="sumi">
+    </figure>
+
+      <div class="h-50 w-50 justify-content-center align-items-center row row-cols-2"> 
+          <div class="col">
+            <button id="button-a" type="button" class="btn btn-light">Chizuru Ichinose</button>
+          </div>
+
+          <div class="col">
+            <button id="button-b" type="button" class="btn btn-light">Ruka Sarashina</button>
+          </div>
+          <div class="col">
+            <button id="button-c" type="button" class="btn btn-light">Sumi Sakurasawa</button>
+          </div>
+          <div class="col">
+            <button id="button-d" type="button" class="btn btn-light">Mami Nanami</button>
+          </div>
+      </div>
+  </div>
+  <div id="end-page" class="h-50 w-50 d-none">
+    <div id="score"></div>
+    <div>Click on the button to retake the quiz</div>
+   <button id="redo-quiz-btn">Redo Quiz</button>
+ </div>
+
+    <script src="/index.HASH_REF_062e9a7565ca912a5f7d6b832142d36c.js"></script>
+</div></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

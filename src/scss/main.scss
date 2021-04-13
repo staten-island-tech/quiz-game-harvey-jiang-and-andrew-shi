@@ -1,4 +1,3 @@
-
 @import "bootstrap/scss/bootstrap";
 
 html,
@@ -7,4 +6,8 @@ body,
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.con-bc-color {
+  background-color: #ffb7c5;
 }
